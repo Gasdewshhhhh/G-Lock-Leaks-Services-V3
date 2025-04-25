@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Creepster', cursive;
+}
+
+/* Glitch Title Effect */
+.glitch-title {
+    position: relative;
+    font-size: 3rem;
+    color: #ff1e56;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+    .glitch-title::before,
+    .glitch-title::after {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        width: 100%;
+        color: #ff1e56;
+        overflow: hidden;
+        clip: rect(0, 900px, 0, 0);
+    }
+
+    .glitch-title::before {
+        color: #ff005a;
+        animation: glitchTop 2s infinite linear alternate-reverse;
+    }
+
+    .glitch-title::after {
+        color: #ff80aa;
+        animation: glitchBottom 2s infinite linear alternate-reverse;
+    }
+
+@keyframes glitchTop {
+    0% {
+        clip: rect(0, 9999px, 0, 0);
+        transform: translate(-2px, -2px);
+    }
+
+    100% {
+        clip: rect(0, 9999px, 30px, 0);
+        transform: translate(2px, 2px);
+    }
+}
+
+@keyframes glitchBottom {
+    0% {
+        clip: rect(10px, 9999px, 40px, 0);
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        clip: rect(5px, 9999px, 60px, 0);
+        transform: translate(-2px, 2px);
+    }
+}
+
+/* Card Styling (NO animations, NO hover effects) */
+.card {
+    background-color: #111;
+    border: 2px solid #ff1e56;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+    .card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+/* Buttons */
+.button-glow {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #ff0000;
+    border-radius: 5px;
+    text-decoration: none;
+}

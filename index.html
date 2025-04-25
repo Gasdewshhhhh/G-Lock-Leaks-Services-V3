@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>G-Lock Leaks & Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        html, body {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen p-6">
+
+    <!-- Hero Section -->
+    <section class="h-screen flex flex-col justify-center items-center space-y-4">
+        <h1 class="glitch-title" data-text="G-Lock Leaks & Services">G-Lock Leaks & Services</h1>
+        <div class="flex space-x-4">
+            <a href="#leaks" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 text-lg font-semibold rounded-xl">Browse Leaks</a>
+            <a href="https://discord.gg/WFyPgwXTZx" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-lg font-semibold rounded-xl">Join Discord</a>
+        </div>
+    </section>
+
+    <!-- Leaks Section -->
+    <section id="leaks" class="pt-12">
+        <main class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="content"></main>
+    </section>
+
+    <!-- Hidden Admin Button & Form -->
+    <div class="fixed bottom-4 right-4 space-x-2">
+        <button onclick="promptAdmin()" class="bg-black text-white px-4 py-2 rounded-xl hover:bg-gray-800 transition">.</button>
+    </div>
+
+    <div id="adminForm" class="fixed bottom-24 right-4 bg-gray-900 p-4 rounded-xl shadow-xl hidden">
+        <input type="text" id="name" placeholder="Leak Name" class="w-full mb-2 p-2 rounded bg-gray-700 text-white">
+        <input type="text" id="imgUrl" placeholder="Image URL" class="w-full mb-2 p-2 rounded bg-gray-700 text-white">
+        <input type="text" id="linkUrl" placeholder="Link URL" class="w-full mb-2 p-2 rounded bg-gray-700 text-white">
+        <button onclick="addCard()" class="bg-green-600 w-full p-2 rounded hover:bg-green-700">Add Card</button>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
